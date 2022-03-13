@@ -1,5 +1,5 @@
 # Kubeset
-Installs necessary modules so that I don't have to guess what is working and what is not.
+Installs necessary apps/modules to setup kubernetes
 
 curl https://www.npmjs.com/install.sh | sudo sh
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64  
