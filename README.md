@@ -7,6 +7,7 @@ sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
 kubectl apply -f https://k8s.io/examples/application/guestbook/redis-leader-deployment.yaml
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl.sha256"
+https://hub.docker.com/editions/community/docker-ce-desktop-mac
 echo "$(<kubectl.sha256)  kubectl" | shasum -a 256 --check  
 chmod +x ./kubectl 
 sudo mv ./kubectl /usr/local/bin/kubectl                                                                                 
@@ -14,3 +15,7 @@ sudo chown root: /usr/local/bin/kubectl
 kubectl version --client 
 kubectl version --client --output=yaml 
 brew install kubectl 
+brew install kubernetes-cli
+minikube start --driver=docker
+minikube config set driver docker
+
